@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbo Charge Your Command Prompt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #2d3748;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0px 20px;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        article {
+            background: #ffffff;
+            padding: 0px 40px 40px 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            letter-spacing: -0.025em;
+            text-align: center;
+        }
+        h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 32px;
+            color: #2d3748;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+        p {
+            text-align: justify;
+            hyphens: auto;
+            margin-bottom: 1.5em;
+            font-weight: 400;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+        }
+        blockquote {
+            background-color: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        blockquote p {
+            text-align: left;
+            margin-bottom: 0;
+        }
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #5a67d8;
+            text-decoration: underline;
+        }
+        .terminal-command {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+            background: #1a202c;
+            color: #68d391;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            display: inline-block;
+            margin: 8px 0;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 16px;
+                padding: 20px 15px;
+            }
+            article {
+                padding: 25px 20px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 26px;
+            }
+            .terminal-command {
+                font-size: 14px;
+                padding: 10px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <h1>Turbo Charge Your Command Prompt</h1>
+        <img src="newbanner.png" alt="Turbo Charge Your Command Prompt" >
+
+        <p><a href="https://github.com/google-gemini/gemini-cli"> Gemini CLI </a>is super cool and seems really powerful. But if you’re a purist and a command-line aficionado like me—someone who doesn’t care much for interactive chat mode, and just wants to quickly look up command syntax and run it without constantly switching between the terminal and the browser - then read on. </p>
+        <p>If you haven’t installed it yet, it’s definitely worth a try! You can install it very easily with a simple command (assuming that you are not living in stone age and already have Node JS and npm installed on your machine) <p><span class="terminal-command">npm install -g @google/gemini-cli</span></p>
+
+        <p>If you are confined to a CUI based text box to type in your commands then it's not much of a CLI, it is really just a fancy CUI (character based User interface). Don't get me wrong it is indeed good and today's CUI Apps have come a long way from the earliest <i>libcurses</i> and those extended ASCII character based interfaces. Now a days there are things like <a href="https://charm.land/"> charm bubble-tea </a> that are taking the CUI to a whole new level. Whethre you call it a CUI or TUI, those character/text-based interfaces are still here and will be here for a long time. There are still some people who reminisce about the shell-based internet connections, lynx, Pine, the kermit file transfer protocol and that peculiar noise of a dial-up modem, which might explain why there are these things like <a href="https://www.terminal.shop/">terminal.shop</a> !! 
+		
+		<p> Gemini CLI is completely Open source and is also extensible by design. It is indeed a very good step towards democratizing Agentic AI. I am aware of the <b>!</b> command that internally invokes the <i>run_shell_command()</i> tool. I am also aware of the gemini -p command line switch. But for me it still left something desired. It simly does not really feel like a true CLI.  So I quickly whipped up a simple BAT file that give you really seamless CLI experience. </p>
+		It is available <a href="https://github.com/semalpatil/Command-Magic">here in my Github repo.</a>
+		<p> It's a very simply BAT file called magic.bat. The neat trick here is that we are just telling Gemini CLI to just generate the command and we execute it later after getting user's consent. There is a PowerShell version as well called psmagic.PS1.</p>
+        <p>Now I can simply type something like this on my Windows Command prompt:
+<p><span class="terminal-command">C:\Demo> magic enumerate all the running AWS ec2 instances but only show me instance id name-tag,instance type and the public IP</span></p>
+
+<p>This shows me the exact aws cli command with the proper JMESPath query. It also copies it to the clipboard.</p>
+
+<p>I can also do something like:</p> 
+<p><span class="terminal-command">C:\Demo> magic find my external IP</span></p>
+
+
+<p>It figures out a Web Service like https://api.ipify.org or https://ifconfig.me and shows me the command to invoke that WebRequest. Someone who has already played with Gemini CLI might say "But Gemini can already do even better and actually run the command using <i>web_fetch()</i> tool and just show me the result with this simple command:</p>
+
+<p><span class="terminal-command">C:\Demo> gemini whats my public IP</span></p>
+
+<p>Yes it's kind of smart that way, I give that to you. But when it comes to something like this:</p>
+
+<p><span class="terminal-command">C:\Demo> gemini whats my Private IP</span></p>
+
+
+<p>At present it will not work and respond with something like this:</p>
+<div style="background-color: rgb(237, 234, 234)"><p><i>I am sorry, but I cannot fulfill this request. I do not have access to the necessary tools to determine your private IP address. You can find it by running <code style="font-family: 'JetBrains Mono', monospace; background: #f1f5f9; padding: 2px 6px; border-radius: 3px; color: #475569;">ipconfig</code> in your terminal.</i></p></div>
+
+<p>But with this BAT file it just works;</p>
+
+<p><span class="terminal-command">C:\Demo> magic my private IP</span></p>
+
+
+<p>The reason is that it will not really run it for you directly it just finds the right command and gives you an option to execute it.</p>
+
+<p>I am still exploring Gemini CLI. Gemini CLI is much more than just generating commands. It has some very powerful tools like file system access, extensions, new tools, and even MCP server support. Gemini CLI can really help automate many tasks. To be fair, my own use case has been quite limited so far—I’ve only tapped into a small fraction of what Gemini CLI can really do.</p> 
+<p>When you are using the Gemini CLI through its CUI, it shows some rotating dots animation and shows some funny status messages to calm you down and hide the fact that it is taking some time. But when you are directly using it on the command prompt through the .BAT file hack, sometimes it is frustratingly slow.</p>
+
+<p><b>PS:</b> And as it always happens, after I created this hack, used it for a few days and decided to write about it I found out about this <a href="https://github.com/PowerShell/AIShell/releases">MS AIShell </a>!! It is in very early stage and currently in preview mode, just getting it up and running requires some efforts. So I have not yet really played with it much.</p> 
+
+Perhaps there are already much better ways to accomplish what I'm trying to do. If you are aware of any other tools or anything else that can really boost the command line productivity then do leave a comment about it.</p> 
+
+<p>Happy Hacking !!
+</p>
+
+<div class="giscuss"/>
+    </article>
+    <script src="https://giscus.app/client.js"
+        data-repo="semalpatil/mlcomments"
+        data-repo-id="R_kgDOMTCzVQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMTCzVc4Cgn_K"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+</body>
+</html>
