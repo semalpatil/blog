@@ -125,12 +125,12 @@
         <h1>Turbo Charge Your Command Prompt</h1>
         <img src="newbanner.png" alt="Turbo Charge Your Command Prompt" >
 
-        <p><a href="https://github.com/google-gemini/gemini-cli"> Gemini CLI </a>is super cool and seems really powerful. But if you’re a purist and a command-line aficionado like me—someone who doesn’t care much for interactive chat mode, and just wants to quickly look up command syntax and run it without constantly switching between the terminal and the browser - then read on. </p>
+        <p><a href="https://github.com/google-gemini/gemini-cli"> Gemini CLI </a>is super cool and is incredibly powerful. But if you’re a purist and a command-line aficionado like me—someone who doesn’t care much for interactive chat mode, and just wants to quickly look up command syntax and run it without constantly switching between the terminal and the browser - then read on. </p>
         <p>If you haven’t installed it yet, it’s definitely worth a try! You can install it very easily with a simple command (assuming that you are not living in stone age and already have Node JS and npm installed on your machine) <p><span class="terminal-command">npm install -g @google/gemini-cli</span></p>
 
-        <p>If you are confined to a CUI based text box to type in your commands then it's not much of a CLI, it is really just a fancy CUI (character based User interface). Don't get me wrong it is indeed good and today's CUI Apps have come a long way from the earliest <i>libcurses</i> and those extended ASCII character based interfaces. Now a days there are things like <a href="https://charm.land/"> charm bubble-tea </a> that are taking the CUI to a whole new level. Whethre you call it a CUI or TUI, those character/text-based interfaces are still here and will be here for a long time. There are still some people who reminisce about the shell-based internet connections, lynx, Pine, the kermit file transfer protocol and that peculiar noise of a dial-up modem, which might explain why there are these things like <a href="https://www.terminal.shop/">terminal.shop</a> !! 
+        <p>If you are confined to a CUI based text box to type in your commands then it's not much of a CLI, it is really just a fancy CUI (character based User interface). Don't get me wrong it is indeed good and today's CUI Apps have come a long way from the earliest <i>libcurses</i> and those extended ASCII character based interfaces. Now a days there are things like <a href="https://charm.land/"> charm bubble-tea </a> that are taking the CUI to a whole new level. Whether you call it a CUI or TUI, those character/text-based interfaces are still here and will be here for a long time. There are still some people who reminisce about the shell-based internet connections, lynx, Pine, the kermit file transfer protocol and that peculiar noise of a dial-up modem, which might explain why there are these things like <a href="https://www.terminal.shop/">terminal.shop</a> !! 
 		
-		<p> Gemini CLI is completely Open source and is also extensible by design. It is indeed a very good step towards democratizing Agentic AI. I am aware of the <b>!</b> command that internally invokes the <i>run_shell_command()</i> tool. I am also aware of the gemini -p command line switch. But for me it still left something desired. It simly does not really feel like a true CLI.  So I quickly whipped up a simple BAT file that give you really seamless CLI experience. </p>
+		<p> Gemini CLI is completely Open source and is also extensible by design. It is indeed a very good step towards democratizing Agentic AI. I am aware of the <b>!</b> command that internally invokes the <i>run_shell_command()</i> tool. I am also aware of the gemini -p command line switch. But for me it still left something desired. It does not really feel like a true CLI.  So I quickly whipped up a simple BAT file that gives you really seamless CLI experience. </p>
 		It is available <a href="https://github.com/semalpatil/Command-Magic">here in my Github repo.</a>
 		<p> It's a very simply BAT file called magic.bat. The neat trick here is that we are just telling Gemini CLI to just generate the command and we execute it later after getting user's consent. There is a PowerShell version as well called psmagic.PS1.</p>
         <p>Now I can simply type something like this on my Windows Command prompt:
@@ -138,9 +138,12 @@
 
 <p>This shows me the exact aws cli command with the proper JMESPath query. It also copies it to the clipboard.</p>
 <img src="demo1.jpg">
+
+Gemini CLI seems to know when simple commands can be used and when it needs to use PowerShell to do something more.
+<img src="demo2.jpg"
 <p>I can also do something like:</p> 
 <p><span class="terminal-command">C:\Demo> magic find my external IP</span></p>
-
+<img src="demo3.jpg">
 
 <p>It figures out a Web Service like https://api.ipify.org or https://ifconfig.me and shows me the command to invoke that WebRequest. Someone who has already played with Gemini CLI might say "But Gemini can already do even better and actually run the command using <i>web_fetch()</i> tool and just show me the result with this simple command:</p>
 
@@ -151,15 +154,8 @@
 <p><span class="terminal-command">C:\Demo> gemini whats my Private IP</span></p>
 
 
-<p>At present it will not work and respond with something like this:</p>
-<div style="background-color: rgb(237, 234, 234)"><p><i>I am sorry, but I cannot fulfill this request. I do not have access to the necessary tools to determine your private IP address. You can find it by running <code style="font-family: 'JetBrains Mono', monospace; background: #f1f5f9; padding: 2px 6px; border-radius: 3px; color: #475569;">ipconfig</code> in your terminal.</i></p></div>
-
-<p>But with this BAT file it just works;</p>
-
-<p><span class="terminal-command">C:\Demo> magic my private IP</span></p>
-
-<img src="demo3.jpg">
-<p>The reason is that it will not really run it for you directly it just finds the right command and gives you an option to execute it.</p>
+<p>At present it does not work but with this BAT file hack it just works</p>
+<img src="demo4.jpg">
 
 <p>I am still exploring Gemini CLI. Gemini CLI is much more than just generating commands. It has some very powerful tools like file system access, extensions, new tools, and even MCP server support. Gemini CLI can really help automate many tasks. To be fair, my own use case has been quite limited so far—I’ve only tapped into a small fraction of what Gemini CLI can really do.</p> 
 <p>When you are using the Gemini CLI through its CUI, it shows some rotating dots animation and shows some funny status messages to calm you down and hide the fact that it is taking some time. But when you are directly using it on the command prompt through the .BAT file hack, sometimes it is frustratingly slow.</p>
